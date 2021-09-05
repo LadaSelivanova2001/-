@@ -1,116 +1,116 @@
-#define _CRT_SECURE_NO_WARNINGS 
-#include <stdio.h> 
-#include <string.h> 
-#include <locale.h> 
-#include <windows.h> 
-#include "Pass.h" 
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <string.h>
+#include <locale.h>
+#include <windows.h>
+#include "Pass.h"
 
-/*Ôóíêöèÿ çàïîëíåíèÿ áàçû äàííûõ*/
+/*Функция заполнения базы данных*/
 int Fill()
 {
-    int i, g;
+	int i, g;
 
-H: printf("Ââåäèòå êîëè÷åñòâî ïàññàæèðîâ, êîòîðûõ íåîáõîäèìî âíåñòè â áàçó äàííûõ > ");
-    scanf("%d", &Number);
-    if (Number > 19 || Number <= 0)
-    {
-        printf("Íåïðàâèëüíûé íîìåð!\n");
-        goto H;
-    }
-    g = Number;
+H: printf("Введите количество пассажиров, которых необходимо внести в базу данных > ");
+	scanf("%d", &Number);
+	if (Number > 19 || Number <= 0)
+	{
+		printf("Неправильный номер!\n");
+		goto H;
+	}
+	g = Number;
 
-    for (Number = 0; Number < g; Number++)
-    {
-    A: printf("Ââåäèòå ôàìèëèþ > ");
-        scanf("%20s", Men[Number].Surname);
-        for (i = 0; i < strlen(Men[Number].Surname); i++)
-        {
-            if ((Men[Number].Surname[i] <= 'z' && Men[Number].Surname[i] >= 'a') || (Men[Number].Surname[i] <= 'Z' && Men[Number].Surname[i] >= 'A') || (Men[Number].Surname[i] <= 'ß' && Men[Number].Surname[i] >= 'À') || (Men[Number].Surname[i] <= 'ÿ' && Men[Number].Surname[i] >= 'à'))
-            {
-                continue;
-            }
-            else
-            {
-                printf("Íåâåðíûé ôîðìàò!\n");
-                goto A;
-            }
-        }
+	for (Number = 0; Number < g; Number++)
+	{
+	A: printf("Введите фамилию > ");
+		scanf("%20s", Men[Number].Surname);
+		for (i = 0; i < strlen(Men[Number].Surname); i++)
+		{
+			if ((Men[Number].Surname[i] <= 'z' && Men[Number].Surname[i] >= 'a') || (Men[Number].Surname[i] <= 'Z' && Men[Number].Surname[i] >= 'A') || (Men[Number].Surname[i] <= 'Я' && Men[Number].Surname[i] >= 'А') || (Men[Number].Surname[i] <= 'я' && Men[Number].Surname[i] >= 'а'))
+			{
+				continue;
+			}
+			else
+			{
+				printf("Неверный формат!\n");
+				goto A;
+			}
+		}
 
-    B: printf("Ââåäèòå èìÿ > ");
-        scanf("%20s", Men[Number].Name);
-        for (i = 0; i < strlen(Men[Number].Name); i++)
-        {
-            if ((Men[Number].Name[i] <= 'z' && Men[Number].Name[i] >= 'a') || (Men[Number].Name[i] <= 'Z' && Men[Number].Name[i] >= 'A') || (Men[Number].Name[i] <= 'ß' && Men[Number].Name[i] >= 'À') || (Men[Number].Name[i] <= 'ÿ' && Men[Number].Name[i] >= 'à'))
-            {
-                continue;
-            }
-            else
-            {
-                printf("Íåâåðíûé ôîðìàò!\n");
-                goto B;
-            }
-        }
+	B: printf("Введите имя > ");
+		scanf("%20s", Men[Number].Name);
+		for (i = 0; i < strlen(Men[Number].Name); i++)
+		{
+			if ((Men[Number].Name[i] <= 'z' && Men[Number].Name[i] >= 'a') || (Men[Number].Name[i] <= 'Z' && Men[Number].Name[i] >= 'A') || (Men[Number].Name[i] <= 'Я' && Men[Number].Name[i] >= 'А') || (Men[Number].Name[i] <= 'я' && Men[Number].Name[i] >= 'а'))
+			{
+				continue;
+			}
+			else
+			{
+				printf("Неверный формат!\n");
+				goto B;
+			}
+		}
 
-    C: printf("Ââåäèòå îò÷åñòâî > ");
-        scanf("%20s", Men[Number].Otch);
-        for (i = 0; i < strlen(Men[Number].Otch); i++)
-        {
-            if ((Men[Number].Otch[i] <= 'z' && Men[Number].Otch[i] >= 'a') || (Men[Number].Otch[i] <= 'Z' && Men[Number].Otch[i] >= 'A') || (Men[Number].Otch[i] <= 'ß' && Men[Number].Otch[i] >= 'À') || (Men[Number].Otch[i] <= 'ÿ' && Men[Number].Otch[i] >= 'à'))
-            {
-                continue;
-            }
-            else
-            {
-                printf("Íåâåðíûé ôîðìàò!\n");
-                goto C;
-            }
-        }
-        
-    D: printf("Ââåäèòå íîìåð êàþòû > ");
-        scanf("%d", &Men[Number].NumRoom);
-        if (Men[Number].NumRoom < 0)
-        {
-            printf("Íåâåðíûé ôîðìàò!\n");
-            goto D;
-        }
+	C: printf("Введите отчество > ");
+		scanf("%20s", Men[Number].Otch);
+		for (i = 0; i < strlen(Men[Number].Otch); i++)
+		{
+			if ((Men[Number].Otch[i] <= 'z' && Men[Number].Otch[i] >= 'a') || (Men[Number].Otch[i] <= 'Z' && Men[Number].Otch[i] >= 'A') || (Men[Number].Otch[i] <= 'Я' && Men[Number].Otch[i] >= 'А') || (Men[Number].Otch[i] <= 'я' && Men[Number].Otch[i] >= 'а'))
+			{
+				continue;
+			}
+			else
+			{
+				printf("Неверный формат!\n");
+				goto C;
+			}
+		}
 
-    E:  printf("Ââåäèòå òèï êàþòû ('0'- ëþêñ, '1','2','3'-1, 2 è 3 êëàññû ñîîòâåòñòâåííî) > ");
-        scanf("%d", &Men[Number].TypeRoom);
-        if (Men[Number].TypeRoom > 3 || Men[Number].TypeRoom < 0)
-        {
-            printf("Íåâåðíûé ôîðìàò!\n");
-            goto E;
-        }
+	D: printf("Введите номер каюты > ");
+		scanf("%d", &Men[Number].NumRoom);
+		if (Men[Number].NumRoom < 0)
+		{
+			printf("Неверный формат!\n");
+			goto D;
+		}
 
-    F: printf("Ââåäèòå ñòðàíó ïðîæèâàíèÿ > ");
-        scanf("%20s", Men[Number].Country);
-        for (i = 0; i < strlen(Men[Number].Country); i++)
-        {
-            if ((Men[Number].Country[i] <= 'z' && Men[Number].Country[i] >= 'a') || (Men[Number].Country[i] <= 'Z' && Men[Number].Country[i] >= 'A') || (Men[Number].Country[i] <= 'ß' && Men[Number].Country[i] >= 'À') || (Men[Number].Country[i] <= 'ÿ' && Men[Number].Country[i] >= 'à'))
-            {
-                continue;
-            }
-            else
-            {
-                printf("Íåâåðíûé ôîðìàò!\n");
-                goto F;
-            }
-        }
+	E: printf("Введите тип каюты ('0'- люкс, '1','2','3'-1, 2 и 3 классы соответственно) > ");
+		scanf("%d", &Men[Number].TypeRoom);
+		if (Men[Number].TypeRoom > 3 || Men[Number].TypeRoom < 0)
+		{
+			printf("Неверный формат!\n");
+			goto E;
+		}
 
-    G:printf("Ââåäèòå ïîðò íàçíà÷åíèÿ > ");
-        scanf("%20s", Men[Number].End);
-        for (i = 0; i < strlen(Men[Number].End); i++)
-        {
-            if ((Men[Number].End[i] <= 'z' && Men[Number].End[i] >= 'a') || (Men[Number].End[i] <= 'Z' && Men[Number].End[i] >= 'A') || (Men[Number].End[i] <= 'ß' && Men[Number].End[i] >= 'À') || (Men[Number].End[i] <= 'ÿ' && Men[Number].End[i] >= 'à'))
-            {
-                continue;
-            }
-            else
-            {
-                printf("Íåâåðíûé ôîðìàò!\n");
-                goto G;
-            }
-        }
-    }
-    return Number;
+	F: printf("Введите страну проживания > ");
+		scanf("%20s", Men[Number].Country);
+		for (i = 0; i < strlen(Men[Number].Country); i++)
+		{
+			if ((Men[Number].Country[i] <= 'z' && Men[Number].Country[i] >= 'a') || (Men[Number].Country[i] <= 'Z' && Men[Number].Country[i] >= 'A') || (Men[Number].Country[i] <= 'Я' && Men[Number].Country[i] >= 'А') || (Men[Number].Country[i] <= 'я' && Men[Number].Country[i] >= 'а'))
+			{
+				continue;
+			}
+			else
+			{
+				printf("Неверный формат!\n");
+				goto F;
+			}
+		}
+
+	G:printf("Введите порт назначения > ");
+		scanf("%20s", Men[Number].End);
+		for (i = 0; i < strlen(Men[Number].End); i++)
+		{
+			if ((Men[Number].End[i] <= 'z' && Men[Number].End[i] >= 'a') || (Men[Number].End[i] <= 'Z' && Men[Number].End[i] >= 'A') || (Men[Number].End[i] <= 'Я' && Men[Number].End[i] >= 'А') || (Men[Number].End[i] <= 'я' && Men[Number].End[i] >= 'а'))
+			{
+				continue;
+			}
+			else
+			{
+				printf("Неверный формат!\n");
+				goto G;
+			}
+		}
+	}
+	return Number;
 }
