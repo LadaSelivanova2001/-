@@ -1,217 +1,116 @@
 #define _CRT_SECURE_NO_WARNINGS 
-
 #include <stdio.h> 
-
 #include <string.h> 
-
 #include <locale.h> 
-
 #include <windows.h> 
-
 #include "Pass.h" 
 
-/*Ôóíêöèÿ çàïîëíåíèÿ áàçû äàííûõ*/
-
+/*Ã”Ã³Ã­ÃªÃ¶Ã¨Ã¿ Ã§Ã Ã¯Ã®Ã«Ã­Ã¥Ã­Ã¨Ã¿ Ã¡Ã Ã§Ã» Ã¤Ã Ã­Ã­Ã»Ãµ*/
 int Fill()
-
 {
-
     int i, g;
 
-H: printf("Ââåäèòå êîëè÷åñòâî ïàññàæèğîâ, êîòîğûõ íåîáõîäèìî âíåñòè â áàçó äàííûõ > ");
-
-
-
+H: printf("Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ ÃªÃ®Ã«Ã¨Ã·Ã¥Ã±Ã²Ã¢Ã® Ã¯Ã Ã±Ã±Ã Ã¦Ã¨Ã°Ã®Ã¢, ÃªÃ®Ã²Ã®Ã°Ã»Ãµ Ã­Ã¥Ã®Ã¡ÃµÃ®Ã¤Ã¨Ã¬Ã® Ã¢Ã­Ã¥Ã±Ã²Ã¨ Ã¢ Ã¡Ã Ã§Ã³ Ã¤Ã Ã­Ã­Ã»Ãµ > ");
     scanf("%d", &Number);
-
     if (Number > 19 || Number <= 0)
-
     {
-
-        printf("Íåïğàâèëüíûé íîìåğ!\n");
-
+        printf("ÃÃ¥Ã¯Ã°Ã Ã¢Ã¨Ã«Ã¼Ã­Ã»Ã© Ã­Ã®Ã¬Ã¥Ã°!\n");
         goto H;
-
     }
-
     g = Number;
 
     for (Number = 0; Number < g; Number++)
-
     {
-
-    A: printf("Ââåäèòå ôàìèëèş > ");
-
+    A: printf("Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã´Ã Ã¬Ã¨Ã«Ã¨Ã¾ > ");
         scanf("%20s", Men[Number].Surname);
-
         for (i = 0; i < strlen(Men[Number].Surname); i++)
-
         {
-
-            if ((Men[Number].Surname[i] <= 'z' && Men[Number].Surname[i] >= 'a') || (Men[Number].Surname[i] <= 'Z' && Men[Number].Surname[i] >= 'A') || (Men[Number].Surname[i] <= 'ß' && Men[Number].Surname[i] >= 'À') || (Men[Number].Surname[i] <= 'ÿ' && Men[Number].Surname[i] >= 'à'))
-
+            if ((Men[Number].Surname[i] <= 'z' && Men[Number].Surname[i] >= 'a') || (Men[Number].Surname[i] <= 'Z' && Men[Number].Surname[i] >= 'A') || (Men[Number].Surname[i] <= 'ÃŸ' && Men[Number].Surname[i] >= 'Ã€') || (Men[Number].Surname[i] <= 'Ã¿' && Men[Number].Surname[i] >= 'Ã '))
             {
-
                 continue;
-
             }
-
             else
-
             {
-
-                printf("Íåâåğíûé ôîğìàò!\n");
-
+                printf("ÃÃ¥Ã¢Ã¥Ã°Ã­Ã»Ã© Ã´Ã®Ã°Ã¬Ã Ã²!\n");
                 goto A;
-
             }
-
         }
 
-    B: printf("Ââåäèòå èìÿ > ");
-
+    B: printf("Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã¨Ã¬Ã¿ > ");
         scanf("%20s", Men[Number].Name);
-
         for (i = 0; i < strlen(Men[Number].Name); i++)
-
         {
-
-            if ((Men[Number].Name[i] <= 'z' && Men[Number].Name[i] >= 'a') || (Men[Number].Name[i] <= 'Z' && Men[Number].Name[i] >= 'A') || (Men[Number].Name[i] <= 'ß' && Men[Number].Name[i] >= 'À') || (Men[Number].Name[i] <= 'ÿ' && Men[Number].Name[i] >= 'à'))
-
+            if ((Men[Number].Name[i] <= 'z' && Men[Number].Name[i] >= 'a') || (Men[Number].Name[i] <= 'Z' && Men[Number].Name[i] >= 'A') || (Men[Number].Name[i] <= 'ÃŸ' && Men[Number].Name[i] >= 'Ã€') || (Men[Number].Name[i] <= 'Ã¿' && Men[Number].Name[i] >= 'Ã '))
             {
-
                 continue;
-
             }
-
             else
-
             {
-
-                printf("Íåâåğíûé ôîğìàò!\n");
-
+                printf("ÃÃ¥Ã¢Ã¥Ã°Ã­Ã»Ã© Ã´Ã®Ã°Ã¬Ã Ã²!\n");
                 goto B;
-
             }
-
         }
 
-    C: printf("Ââåäèòå îò÷åñòâî > ");
-
+    C: printf("Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã®Ã²Ã·Ã¥Ã±Ã²Ã¢Ã® > ");
         scanf("%20s", Men[Number].Otch);
-
         for (i = 0; i < strlen(Men[Number].Otch); i++)
-
         {
-
-            if ((Men[Number].Otch[i] <= 'z' && Men[Number].Otch[i] >= 'a') || (Men[Number].Otch[i] <= 'Z' && Men[Number].Otch[i] >= 'A') || (Men[Number].Otch[i] <= 'ß' && Men[Number].Otch[i] >= 'À') || (Men[Number].Otch[i] <= 'ÿ' && Men[Number].Otch[i] >= 'à'))
-
+            if ((Men[Number].Otch[i] <= 'z' && Men[Number].Otch[i] >= 'a') || (Men[Number].Otch[i] <= 'Z' && Men[Number].Otch[i] >= 'A') || (Men[Number].Otch[i] <= 'ÃŸ' && Men[Number].Otch[i] >= 'Ã€') || (Men[Number].Otch[i] <= 'Ã¿' && Men[Number].Otch[i] >= 'Ã '))
             {
-
                 continue;
-
             }
-
             else
-
             {
-
-                printf("Íåâåğíûé ôîğìàò!\n");
-
+                printf("ÃÃ¥Ã¢Ã¥Ã°Ã­Ã»Ã© Ã´Ã®Ã°Ã¬Ã Ã²!\n");
                 goto C;
-
             }
-
         }
-
-    D: printf("Ââåäèòå íîìåğ êàşòû > ");
-
+        
+    D: printf("Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã­Ã®Ã¬Ã¥Ã° ÃªÃ Ã¾Ã²Ã» > ");
         scanf("%d", &Men[Number].NumRoom);
-
         if (Men[Number].NumRoom < 0)
-
         {
-
-            printf("Íåâåğíûé ôîğìàò!\n");
-
+            printf("ÃÃ¥Ã¢Ã¥Ã°Ã­Ã»Ã© Ã´Ã®Ã°Ã¬Ã Ã²!\n");
             goto D;
-
         }
 
-
-
-    E:  printf("Ââåäèòå òèï êàşòû ('0'- ëşêñ, '1','2','3'-1, 2 è 3 êëàññû ñîîòâåòñòâåííî) > ");
-
+    E:  printf("Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã²Ã¨Ã¯ ÃªÃ Ã¾Ã²Ã» ('0'- Ã«Ã¾ÃªÃ±, '1','2','3'-1, 2 Ã¨ 3 ÃªÃ«Ã Ã±Ã±Ã» Ã±Ã®Ã®Ã²Ã¢Ã¥Ã²Ã±Ã²Ã¢Ã¥Ã­Ã­Ã®) > ");
         scanf("%d", &Men[Number].TypeRoom);
-
         if (Men[Number].TypeRoom > 3 || Men[Number].TypeRoom < 0)
-
         {
-
-            printf("Íåâåğíûé ôîğìàò!\n");
-
+            printf("ÃÃ¥Ã¢Ã¥Ã°Ã­Ã»Ã© Ã´Ã®Ã°Ã¬Ã Ã²!\n");
             goto E;
-
         }
 
-    F: printf("Ââåäèòå ñòğàíó ïğîæèâàíèÿ > ");
-
+    F: printf("Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã±Ã²Ã°Ã Ã­Ã³ Ã¯Ã°Ã®Ã¦Ã¨Ã¢Ã Ã­Ã¨Ã¿ > ");
         scanf("%20s", Men[Number].Country);
-
         for (i = 0; i < strlen(Men[Number].Country); i++)
-
         {
-
-            if ((Men[Number].Country[i] <= 'z' && Men[Number].Country[i] >= 'a') || (Men[Number].Country[i] <= 'Z' && Men[Number].Country[i] >= 'A') || (Men[Number].Country[i] <= 'ß' && Men[Number].Country[i] >= 'À') || (Men[Number].Country[i] <= 'ÿ' && Men[Number].Country[i] >= 'à'))
-
+            if ((Men[Number].Country[i] <= 'z' && Men[Number].Country[i] >= 'a') || (Men[Number].Country[i] <= 'Z' && Men[Number].Country[i] >= 'A') || (Men[Number].Country[i] <= 'ÃŸ' && Men[Number].Country[i] >= 'Ã€') || (Men[Number].Country[i] <= 'Ã¿' && Men[Number].Country[i] >= 'Ã '))
             {
-
                 continue;
-
             }
-
             else
-
             {
-
-                printf("Íåâåğíûé ôîğìàò!\n");
-
+                printf("ÃÃ¥Ã¢Ã¥Ã°Ã­Ã»Ã© Ã´Ã®Ã°Ã¬Ã Ã²!\n");
                 goto F;
-
             }
-
         }
 
-    G:printf("Ââåäèòå ïîğò íàçíà÷åíèÿ > ");
-
+    G:printf("Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã¯Ã®Ã°Ã² Ã­Ã Ã§Ã­Ã Ã·Ã¥Ã­Ã¨Ã¿ > ");
         scanf("%20s", Men[Number].End);
-
         for (i = 0; i < strlen(Men[Number].End); i++)
-
         {
-
-            if ((Men[Number].End[i] <= 'z' && Men[Number].End[i] >= 'a') || (Men[Number].End[i] <= 'Z' && Men[Number].End[i] >= 'A') || (Men[Number].End[i] <= 'ß' && Men[Number].End[i] >= 'À') || (Men[Number].End[i] <= 'ÿ' && Men[Number].End[i] >= 'à'))
-
+            if ((Men[Number].End[i] <= 'z' && Men[Number].End[i] >= 'a') || (Men[Number].End[i] <= 'Z' && Men[Number].End[i] >= 'A') || (Men[Number].End[i] <= 'ÃŸ' && Men[Number].End[i] >= 'Ã€') || (Men[Number].End[i] <= 'Ã¿' && Men[Number].End[i] >= 'Ã '))
             {
-
                 continue;
-
             }
-
             else
-
             {
-
-                printf("Íåâåğíûé ôîğìàò!\n");
-
+                printf("ÃÃ¥Ã¢Ã¥Ã°Ã­Ã»Ã© Ã´Ã®Ã°Ã¬Ã Ã²!\n");
                 goto G;
-
             }
-
         }
-
     }
-
     return Number;
-
 }
