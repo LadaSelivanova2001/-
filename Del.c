@@ -1,49 +1,23 @@
 #define _CRT_SECURE_NO_WARNINGS 
-
 #include <stdio.h> 
-
 #include <string.h> 
-
 #include <locale.h> 
-
 #include <windows.h> 
-
 #include "Pass.h" 
 
-/* Функция для удаления элемента */
-
+/* Г”ГіГ­ГЄГ¶ГЁГї Г¤Г«Гї ГіГ¤Г Г«ГҐГ­ГЁГї ГЅГ«ГҐГ¬ГҐГ­ГІГ  */
 void Del(void)
-
 {
-
     int i;
-
-
-
     Print();
-
-    printf("Введите номер удаляемого элемента > ");
-
+    printf("Г‚ГўГҐГ¤ГЁГІГҐ Г­Г®Г¬ГҐГ° ГіГ¤Г Г«ГїГҐГ¬Г®ГЈГ® ГЅГ«ГҐГ¬ГҐГ­ГІГ  > ");
     scanf("%i", &i);
-
     if (i < 1 || i > Number)
-
     {
-
-        fprintf(stderr, "Элемент с номером %i не существует\n", i);
-
+        fprintf(stderr, "ГќГ«ГҐГ¬ГҐГ­ГІ Г± Г­Г®Г¬ГҐГ°Г®Г¬ %i Г­ГҐ Г±ГіГ№ГҐГ±ГІГўГіГҐГІ\n", i);
         return;
-
     }
-
-
-
     for (i--; i < Number - 1; i++)
-
         Men[i] = Men[i + 1];
-
-
-
     Number--;
-
 } /* End of 'Del' function */
