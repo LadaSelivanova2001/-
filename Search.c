@@ -1,243 +1,129 @@
 #define _CRT_SECURE_NO_WARNINGS 
-
 #include <stdio.h> 
-
 #include <string.h> 
-
 #include <locale.h> 
-
 #include <windows.h> 
-
 #include "Pass.h" 
 
-//Поиск  
-
+//ГЏГ®ГЁГ±ГЄ  
 void Search()
-
 {
-
     int k, g = 1, l;
-
     char str[20];
-
-    printf("Выберите поле, по которому будет произведен поиск\n1-Фамилия\n2-Имя\n3-Отчество\n4-Номер каюты\n5-Тип каюты\n6-Страна проживания\n7-Порт назначения\n> ");
-
+    printf("Г‚Г»ГЎГҐГ°ГЁГІГҐ ГЇГ®Г«ГҐ, ГЇГ® ГЄГ®ГІГ®Г°Г®Г¬Гі ГЎГіГ¤ГҐГІ ГЇГ°Г®ГЁГ§ГўГҐГ¤ГҐГ­ ГЇГ®ГЁГ±ГЄ\n1-Г”Г Г¬ГЁГ«ГЁГї\n2-Г€Г¬Гї\n3-ГЋГІГ·ГҐГ±ГІГўГ®\n4-ГЌГ®Г¬ГҐГ° ГЄГ ГѕГІГ»\n5-Г’ГЁГЇ ГЄГ ГѕГІГ»\n6-Г‘ГІГ°Г Г­Г  ГЇГ°Г®Г¦ГЁГўГ Г­ГЁГї\n7-ГЏГ®Г°ГІ Г­Г Г§Г­Г Г·ГҐГ­ГЁГї\n> ");
     scanf("%d", &k);
-
     do
-
     {
-
         switch (k)
-
         {
-
         case 1:
-
-            printf("Введите Фамилию, по которой будет произведён поиск > ");
-
+            printf("Г‚ГўГҐГ¤ГЁГІГҐ Г”Г Г¬ГЁГ«ГЁГѕ, ГЇГ® ГЄГ®ГІГ®Г°Г®Г© ГЎГіГ¤ГҐГІ ГЇГ°Г®ГЁГ§ГўГҐГ¤ВёГ­ ГЇГ®ГЁГ±ГЄ > ");
             scanf("%s", str);
-
-            printf("Найденные пассажиры:\n");
-
+            printf("ГЌГ Г©Г¤ГҐГ­Г­Г»ГҐ ГЇГ Г±Г±Г Г¦ГЁГ°Г»:\n");
             for (int i = 0; i <= Number; i++)
-
             {
-
                 if (strcmp(Men[i].Surname, str) == 0)
-
                 {
-
                     printf("%2i.|%20s|%20s|%20s|%20d|%20d|%20s|%20s|\n", g, Men[i].Surname, Men[i].Name, Men[i].Otch, Men[i].NumRoom, Men[i].TypeRoom, Men[i].Country, Men[i].End);
-
                     g++;
-
                 }
-
             }
-
             g = 1;
-
             break;
 
         case 2:
-
-            printf("Введите Имя, по которому будет произведён поиск > ");
-
+            printf("Г‚ГўГҐГ¤ГЁГІГҐ Г€Г¬Гї, ГЇГ® ГЄГ®ГІГ®Г°Г®Г¬Гі ГЎГіГ¤ГҐГІ ГЇГ°Г®ГЁГ§ГўГҐГ¤ВёГ­ ГЇГ®ГЁГ±ГЄ > ");
             scanf("%s", str);
-
-            printf("Найденные пассажиры:\n");
-
+            printf("ГЌГ Г©Г¤ГҐГ­Г­Г»ГҐ ГЇГ Г±Г±Г Г¦ГЁГ°Г»:\n");
             for (int i = 0; i <= Number; i++)
-
             {
-
                 if (strcmp(Men[i].Name, str) == 0)
-
                 {
-
                     printf("%2i.|%20s|%20s|%20s|%20d|%20d|%20s|%20s|\n", g, Men[i].Surname, Men[i].Name, Men[i].Otch, Men[i].NumRoom, Men[i].TypeRoom, Men[i].Country, Men[i].End);
-
                     g++;
-
                 }
-
             }
-
             g = 1;
-
             break;
 
         case 3:
-
-            printf("Введите Отчество, по которому будет произведён поиск > ");
-
+            printf("Г‚ГўГҐГ¤ГЁГІГҐ ГЋГІГ·ГҐГ±ГІГўГ®, ГЇГ® ГЄГ®ГІГ®Г°Г®Г¬Гі ГЎГіГ¤ГҐГІ ГЇГ°Г®ГЁГ§ГўГҐГ¤ВёГ­ ГЇГ®ГЁГ±ГЄ > ");
             scanf("%s", str);
-
-            printf("Найденные пассажиры:\n");
-
+            printf("ГЌГ Г©Г¤ГҐГ­Г­Г»ГҐ ГЇГ Г±Г±Г Г¦ГЁГ°Г»:\n");
             for (int i = 0; i <= Number; i++)
-
             {
-
                 if (strcmp(Men[i].Otch, str) == 0)
-
                 {
-
                     printf("%2i.|%20s|%20s|%20s|%20d|%20d|%20s|%20s|\n", g, Men[i].Surname, Men[i].Name, Men[i].Otch, Men[i].NumRoom, Men[i].TypeRoom, Men[i].Country, Men[i].End);
-
                     g++;
-
                 }
-
             }
-
             g = 1;
-
             break;
 
         case 4:
-
-            printf("Введите Номер каюты, по которому будет произведён поиск > ");
-
+            printf("Г‚ГўГҐГ¤ГЁГІГҐ ГЌГ®Г¬ГҐГ° ГЄГ ГѕГІГ», ГЇГ® ГЄГ®ГІГ®Г°Г®Г¬Гі ГЎГіГ¤ГҐГІ ГЇГ°Г®ГЁГ§ГўГҐГ¤ВёГ­ ГЇГ®ГЁГ±ГЄ > ");
             scanf("%d", &l);
-
-            printf("Найденные пассажиры:\n");
-
+            printf("ГЌГ Г©Г¤ГҐГ­Г­Г»ГҐ ГЇГ Г±Г±Г Г¦ГЁГ°Г»:\n");
             for (int i = 0; i < Number; i++)
-
             {
-
                 if (Men[i].NumRoom == l)
-
                 {
-
                     printf("%2i.|%20s|%20s|%20s|%20d|%20d|%20s|%20s|\n", g, Men[i].Surname, Men[i].Name, Men[i].Otch, Men[i].NumRoom, Men[i].TypeRoom, Men[i].Country, Men[i].End);
-
                     g++;
-
                 }
-
             }
-
             g = 1;
-
             break;
 
         case 5:
-
-            printf("Введите Тип каюты, по которому будет произведён поиск > ");
-
+            printf("Г‚ГўГҐГ¤ГЁГІГҐ Г’ГЁГЇ ГЄГ ГѕГІГ», ГЇГ® ГЄГ®ГІГ®Г°Г®Г¬Гі ГЎГіГ¤ГҐГІ ГЇГ°Г®ГЁГ§ГўГҐГ¤ВёГ­ ГЇГ®ГЁГ±ГЄ > ");
             scanf("%d", &l);
-
-            printf("Найденные пассажиры:\n");
-
+            printf("ГЌГ Г©Г¤ГҐГ­Г­Г»ГҐ ГЇГ Г±Г±Г Г¦ГЁГ°Г»:\n");
             for (int i = 0; i < Number; i++)
-
             {
-
                 if (Men[i].TypeRoom == l)
-
                 {
-
                     printf("%2i.|%20s|%20s|%20s|%20d|%20d|%20s|%20s|\n", g, Men[i].Surname, Men[i].Name, Men[i].Otch, Men[i].NumRoom, Men[i].TypeRoom, Men[i].Country, Men[i].End);
-
                     g++;
-
                 }
-
             }
-
             g = 1;
-
             break;
 
         case 6:
-
-            printf("Введите Страну проживания, по которой будет произведён поиск > ");
-
+            printf("Г‚ГўГҐГ¤ГЁГІГҐ Г‘ГІГ°Г Г­Гі ГЇГ°Г®Г¦ГЁГўГ Г­ГЁГї, ГЇГ® ГЄГ®ГІГ®Г°Г®Г© ГЎГіГ¤ГҐГІ ГЇГ°Г®ГЁГ§ГўГҐГ¤ВёГ­ ГЇГ®ГЁГ±ГЄ > ");
             scanf("%s", str);
-
-            printf("Найденные пассажиры:\n");
-
+            printf("ГЌГ Г©Г¤ГҐГ­Г­Г»ГҐ ГЇГ Г±Г±Г Г¦ГЁГ°Г»:\n");
             for (int i = 0; i <= Number; i++)
-
             {
-
                 if (strcmp(Men[i].Country, str) == 0)
-
                 {
-
                     printf("%2i.|%20s|%20s|%20s|%20d|%20d|%20s|%20s|\n", g, Men[i].Surname, Men[i].Name, Men[i].Otch, Men[i].NumRoom, Men[i].TypeRoom, Men[i].Country, Men[i].End);
-
                     g++;
-
                 }
-
             }
-
             g = 1;
-
             break;
 
         case 7:
-
-            printf("Введите Порт назначения, по которому будет произведён поиск > ");
-
+            printf("Г‚ГўГҐГ¤ГЁГІГҐ ГЏГ®Г°ГІ Г­Г Г§Г­Г Г·ГҐГ­ГЁГї, ГЇГ® ГЄГ®ГІГ®Г°Г®Г¬Гі ГЎГіГ¤ГҐГІ ГЇГ°Г®ГЁГ§ГўГҐГ¤ВёГ­ ГЇГ®ГЁГ±ГЄ > ");
             scanf("%s", str);
-
-            printf("Найденные пассажиры:\n");
-
+            printf("ГЌГ Г©Г¤ГҐГ­Г­Г»ГҐ ГЇГ Г±Г±Г Г¦ГЁГ°Г»:\n");
             for (int i = 0; i <= Number; i++)
-
             {
-
                 if (strcmp(Men[i].End, str) == 0)
-
                 {
-
                     printf("%2i.|%20s|%20s|%20s|%20d|%20d|%20s|%20s|\n", g, Men[i].Surname, Men[i].Name, Men[i].Otch, Men[i].NumRoom, Men[i].TypeRoom, Men[i].Country, Men[i].End);
-
                     g++;
-
                 }
-
             }
-
             g = 1;
-
             break;
 
         default:
-
-            printf("Попробуйте снова!\n");
-
+            printf("ГЏГ®ГЇГ°Г®ГЎГіГ©ГІГҐ Г±Г­Г®ГўГ !\n");
             break;
-
         }
-
-
-
     } while (k > 7 || k < 1);
-
 }
